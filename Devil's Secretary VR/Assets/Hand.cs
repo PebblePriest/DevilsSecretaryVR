@@ -35,8 +35,11 @@ public class Hand : MonoBehaviour
     private GameObject heldObject;
     private Transform grabPoint;
     private FixedJoint joint1, joint2;
-    
 
+    public InputActionReference rightTrigger;
+    public GameObject lightning;
+    public GameObject glow;
+    public GameObject unGlow;
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +63,36 @@ public class Hand : MonoBehaviour
         //Teleport hands to body
         body.position = followTarget.position;
         body.rotation = followTarget.rotation;
+
+        //Lightning Effect on Staff
+        controller.activateAction.action.started += lightningStart;
+        controller.activateAction.action.canceled += lightningCancel;
+       
+        lightning.SetActive(false);
+        glow.SetActive(false);
+        unGlow.SetActive(true);
+    }
+    public void lightningStart(InputAction.CallbackContext context)
+    {
+        if (isGrabbing)
+        {
+            Debug.Log("Working");
+            lightning.SetActive(true);
+            glow.SetActive(true);
+            unGlow.SetActive(false);
+        }
+       
+    }
+    public void lightningCancel(InputAction.CallbackContext context)
+    {
+        if (isGrabbing)
+        {
+            Debug.Log("Lightning off");
+            lightning.SetActive(false);
+            glow.SetActive(false);
+            unGlow.SetActive(true);
+        }
+        
     }
 
     // Update is called once per frame
@@ -113,6 +146,7 @@ public class Hand : MonoBehaviour
     private void Grab(InputAction.CallbackContext context)
     {
         if (isGrabbing || heldObject) return;
+        Debug.Log("you are grabbing something");
 
         Collider[] grabbablecolliders = Physics.OverlapSphere(palm.position, reachDistance, grabbableLayer);
         if (grabbablecolliders.Length < 1) return;
@@ -195,6 +229,7 @@ public class Hand : MonoBehaviour
     }
     private void Release(InputAction.CallbackContext context)
     {
+        Debug.Log("Let that go!");
         if(joint1 != null)
         {
             Destroy(joint1);

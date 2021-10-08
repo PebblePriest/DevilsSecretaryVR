@@ -25,7 +25,7 @@ public class States
     float visAngle = 30.0f;
     float EnemyDistRun = 10.0f;
     public float wanderTimer = 4;
-    public float wanderRadius = 50;
+    public float wanderRadius = 30;
     public float timer;
     public float waitTillNextWander = 20;
     public bool CanSeePlayer()
