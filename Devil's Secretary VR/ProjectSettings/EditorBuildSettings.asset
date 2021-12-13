@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Samples/OpenXR Plugin/1.2.8/Controller/ControllerSample.unity
     guid: edb91e86bd8b7dc4ca40ad6c3167de73
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: dd8545c047353ff4bba619b04ea66f7c, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: e02a23ae0173c8f4aa722989c236c5ee, type: 2}

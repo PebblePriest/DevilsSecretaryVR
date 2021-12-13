@@ -7,17 +7,23 @@ TagManager:
   - glow
   - unglow
   - lightning
+  - Staff
+  - Enemy
+  - Soul
+  - Clipboard
+  - Spawn
+  - CubicleNumber
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Weapon
   - Water
   - UI
   - Grabbable
-  - 
-  - 
-  - 
+  - Player
+  - Walls
+  - Enemy
   - 
   - 
   - 

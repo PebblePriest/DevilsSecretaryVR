@@ -9,12 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 542229091020853100}
-  - component: {fileID: 4327829387397440340}
-  - component: {fileID: 599098314}
   - component: {fileID: 599098316}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: StaffFbx 1
-  m_TagString: Untagged
+  m_TagString: Staff
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 922590108855440854}
   m_LocalRotation: {x: 0.41860977, y: -0.032184318, z: 0.13761108, w: 0.8971027}
   m_LocalPosition: {x: 0.41355813, y: -0.15970701, z: 0.7224244}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.30000004, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 5952632613855570550}
   - {fileID: 5158921587663580955}
@@ -37,35 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 49.458, y: 5.072, z: 19.779}
---- !u!114 &4327829387397440340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 922590108855440854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54e7080fea04ef94caf836dcc9388032, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackDamage: 25
---- !u!54 &599098314
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 922590108855440854}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
 --- !u!23 &599098316
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -121,14 +90,13 @@ GameObject:
   - component: {fileID: 3531004940860389253}
   - component: {fileID: 4398970584303922839}
   - component: {fileID: 7408780866696786481}
-  - component: {fileID: 1611337852}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: NoGlow
   m_TagString: unglow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5158921587663580955
 Transform:
   m_ObjectHideFlags: 0
@@ -227,20 +195,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!64 &1611337852
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1864994519661122833}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 289301614986012343, guid: 19abec98f3120b648aff4a8484a37a9d, type: 3}
 --- !u!1 &4104641724568169957
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,14 +209,13 @@ GameObject:
   - component: {fileID: 3618498691205671}
   - component: {fileID: 6414565026625307851}
   - component: {fileID: 3110625735476021430}
-  - component: {fileID: 295718119}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Glow
   m_TagString: glow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5952632613855570550
 Transform:
   m_ObjectHideFlags: 0
@@ -339,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d691e8f3d5413448de05dc3d26d9b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectspinspeed: 50
+  objectspinspeed: 10
   amplitude: 0.01
   frequency: 3
 --- !u!122 &6414565026625307851
@@ -373,20 +326,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!64 &295718119
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4104641724568169957}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 289301614986012343, guid: 19abec98f3120b648aff4a8484a37a9d, type: 3}
 --- !u!1 &4327829386021726323
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,7 +337,7 @@ GameObject:
   - component: {fileID: 4327829386021726318}
   - component: {fileID: 4327829386021726320}
   - component: {fileID: 4327829386021726321}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: LightningSparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4056,7 +3995,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     type: 1
     collisionMode: 0
@@ -4239,7 +4178,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -5274,7 +5213,7 @@ GameObject:
   - component: {fileID: 4327829387219329205}
   - component: {fileID: 4327829387219329204}
   - component: {fileID: 4327829387219329207}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: LightningNoiseandTrail
   m_TagString: lightning
   m_Icon: {fileID: 0}
@@ -5288,14 +5227,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4327829387219329206}
-  m_LocalRotation: {x: -0.45519403, y: -0.07755618, z: 0.056542963, w: 0.88520414}
-  m_LocalPosition: {x: -0.06, y: 0.775, z: -0.017}
-  m_LocalScale: {x: 0.20000002, y: 0.19999997, z: 0.19999996}
+  m_LocalRotation: {x: 0.6884802, y: 0.000000037252896, z: 0.000000030035146, w: -0.7252551}
+  m_LocalPosition: {x: 0.19, y: 0.83, z: 0.1}
+  m_LocalScale: {x: 0.043172, y: 0.043171994, z: 0.04317199}
   m_Children:
   - {fileID: 4327829386021726318}
   m_Father: {fileID: 542229091020853100}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: -2.212, y: -16.769, z: 11.156}
+  m_LocalEulerAnglesHint: {x: 272.98, y: 0, z: 0}
 --- !u!198 &4327829387219329204
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5923,12 +5862,12 @@ ParticleSystem:
         m_RotationOrder: 4
   ShapeModule:
     serializedVersion: 6
-    enabled: 0
+    enabled: 1
     type: 4
-    angle: 25
+    angle: 3
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 1
+    radiusThickness: 0.5
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
@@ -6011,7 +5950,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.5
       mode: 0
       spread: 0
       speed:
@@ -6068,7 +6007,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
     arc:
-      value: 360
+      value: 180
       mode: 0
       spread: 0
       speed:
@@ -9058,7 +8997,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -10094,8 +10033,7 @@ GameObject:
   - component: {fileID: 974828681363669167}
   - component: {fileID: 4379416072405958620}
   - component: {fileID: 2890710954219942008}
-  - component: {fileID: 1454293527}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: staff1:RoadKillOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10166,17 +10104,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1454293527
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6027268606923264245}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1213571216196190178, guid: 19abec98f3120b648aff4a8484a37a9d, type: 3}
