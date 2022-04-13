@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1603264604
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1603264605}
+  - component: {fileID: 1603264606}
+  m_Layer: 0
+  m_Name: BoxCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1603264605
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603264604}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8089422626094216749}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1603264606
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603264604}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07257139, y: 0.1284064, z: 0.10348828}
+  m_Center: {x: 0.00022217633, y: -0.11340414, z: -0.00687237}
 --- !u!1 &3984202684037957416
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,6 +255,7 @@ Transform:
   m_Children:
   - {fileID: 7151449078993137492}
   - {fileID: 6676539848891149117}
+  - {fileID: 1603264605}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -292,14 +337,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ecf17a90308fc74f900ae97b0a6f6b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thePlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  player: {fileID: 0}
   agent: {fileID: 0}
   anim: {fileID: 3790820359317072562}
-  player: {fileID: 0}
-  speed: 1
-  walkRadius: 25
+  deadSkull: {fileID: 4335149162262996757, guid: d251b043ff68cf64aabdb4a523ced7c9, type: 3}
+  sightRange: 6
+  attackRange: 4
+  playerInSight: []
+  playerInAttack: []
+  canWalk: 0
+  playerInSRange: 0
+  playerInARange: 0
   healthBar: {fileID: 5644588200133678361}
   Health: 0
-  deadSkull: {fileID: 4335149162262996757, guid: d251b043ff68cf64aabdb4a523ced7c9, type: 3}
+  projectile: {fileID: 5148205194573672297, guid: f8c5281ddc4bd664fb1762f2d2a5394e, type: 3}
+  height: 1.3
+  speed: 5
+  walkRadius: 25
+  wanderRadius: 20
+  wanderTimer: 5
 --- !u!195 &274605996
 NavMeshAgent:
   m_ObjectHideFlags: 0

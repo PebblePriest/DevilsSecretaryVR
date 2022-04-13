@@ -13,6 +13,7 @@ TagManager:
   - Clipboard
   - Spawn
   - CubicleNumber
+  - Ground
   layers:
   - Default
   - TransparentFX
