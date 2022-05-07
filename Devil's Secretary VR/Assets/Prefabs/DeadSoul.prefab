@@ -186,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   number: {fileID: 1012066061338610946}
   skullNumber: 0
-  timer: 60
+  timer: 25
   enemyPrefab: {fileID: 8865537799884516503, guid: 3787064942200e2458601b7246ef9f21, type: 3}
 --- !u!1 &5061640497834718598
 GameObject:

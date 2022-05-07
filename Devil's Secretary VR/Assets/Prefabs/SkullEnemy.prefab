@@ -344,8 +344,8 @@ MonoBehaviour:
   agent: {fileID: 0}
   anim: {fileID: 3790820359317072562}
   deadSkull: {fileID: 4335149162262996757, guid: d251b043ff68cf64aabdb4a523ced7c9, type: 3}
-  sightRange: 6
-  attackRange: 4
+  sightRange: 5
+  attackRange: 3
   playerInSight: []
   playerInAttack: []
   canWalk: 0

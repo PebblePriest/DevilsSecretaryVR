@@ -27,7 +27,7 @@ public class AI : MonoBehaviour
 
     [Tooltip("Variables used to determine how often the skull can attack and how much damage is done")]
     //Timer variable to be set to determine how quickly the skull can attack with its fireball
-    private float timeBetweenAttacks = 1.5f;
+    private float timeBetweenAttacks = 1f;
     bool hasAttacked;
 
     [Tooltip("Variables used to determine the attack power and health of the skull")]
@@ -47,14 +47,16 @@ public class AI : MonoBehaviour
     public float wanderTimer;
     private float timer;
 
-    
-
+    private TVScript tv;
+    private PlayerScript playerScript;
     public void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
         player = GameObject.FindWithTag("Player").transform;
         timer = wanderTimer;
+        tv = GameObject.Find("Tv").GetComponent<TVScript>();
+        playerScript = player.GetComponent<PlayerScript>();
     }
     void Start()
     {
@@ -111,7 +113,19 @@ public class AI : MonoBehaviour
             agent.speed = 0f;
             Attack();
         }
-        
+        if(tv.points >= 10)
+        {
+            Destroy(this.gameObject);
+        }
+        if (tv.gameOver)
+        {
+            Destroy(this.gameObject);
+
+        }
+        if(playerScript.playerDied)
+        {
+            Destroy(this.gameObject);
+        }
 
         //Change the y location of the skull to above the ground by this much.
         transform.position = new Vector3(transform.position.x, transform.position.y + height, transform.position.z);
@@ -133,14 +147,12 @@ public class AI : MonoBehaviour
     
     public void TakeDamage(float amnt)
     {
-        Debug.Log(Health);
         Health -= amnt;
         healthBar.fillAmount = Health / maxHealth;
         if (Health <= 0)
         {
             Vector3 location = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
             Quaternion rotate = this.transform.rotation;
-            GameManager.Instance.ScoreIncrease(1);
             Destroy(gameObject);
             Instantiate(deadSkull, location, rotate);
         }
@@ -155,7 +167,7 @@ public class AI : MonoBehaviour
             {
                Rigidbody rigb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
 
-                rigb.AddForce(transform.forward * 20f, ForceMode.Impulse);
+                rigb.AddForce(transform.forward * 10f, ForceMode.Impulse);
                 rigb.AddForce(transform.up * 5f, ForceMode.Impulse);
 
                 hasAttacked = true;

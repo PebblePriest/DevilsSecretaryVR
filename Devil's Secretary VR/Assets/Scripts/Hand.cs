@@ -40,7 +40,7 @@ public class Hand : MonoBehaviour
     public GameObject lightning;
     public GameObject glow;
     public GameObject unGlow;
-    
+    public TVScript tvGrabbed;
     // Start is called before the first frame update
     void Start()
     {
@@ -72,7 +72,7 @@ public class Hand : MonoBehaviour
         controller.activateAction.action.started += lightningStart;
         controller.activateAction.action.canceled += lightningCancel;
 
-        
+        tvGrabbed = GameObject.Find("Tv").GetComponent<TVScript>();
     }
     public void lightningStart(InputAction.CallbackContext context)
     {
@@ -149,7 +149,7 @@ public class Hand : MonoBehaviour
     private IEnumerator GrabObject(Collider collider, Rigidbody targetBody)
     {
         isGrabbing = true;
-
+        tvGrabbed.isGrabbed = true;
         //Create a grab point
         grabPoint = new GameObject().transform;
         grabPoint.position = collider.ClosestPoint(palm.position);
@@ -222,6 +222,8 @@ public class Hand : MonoBehaviour
             heldObject = null;
         }
         isGrabbing = false;
+
+        tvGrabbed.isGrabbed = false;
         followTarget = controller.gameObject.transform;
     }
 }

@@ -8,32 +8,46 @@ public class DeadSoulScript : MonoBehaviour
 {
     public Text number;
     public float skullNumber;
-    public float timer = 60f;
+    public float timer = 25f;
     public GameObject enemyPrefab;
+    private TVScript tv;
+
+    private PlayerScript playerScript;
     public void Start()
     {
         skullNumber = Random.Range(1, 32);
         number.text = skullNumber.ToString();
-       for(int i = 0; i < GameManager.Instance.takenNumbers.Count; i++)
-        {
-            if(GameManager.Instance.takenNumbers[i] == skullNumber)
-            {
+        tv = GameObject.Find("Tv").GetComponent<TVScript>();
 
-                GameManager.Instance.takenNumbers.Remove(GameManager.Instance.takenNumbers[i]);
-            }
-            i++;
-        }
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
     }
     public void Update()
     {
-        if(timer <= 0)
+        if(tv.points <= 10)
         {
-            SpawnEnemy();
-            timer = 60;
+            if (timer <= 0)
+            {
+                SpawnEnemy();
+                timer = 25f;
+            }
+            else
+            {
+                timer -= Time.deltaTime;
+            }
         }
-        else
+        if(tv.points >= 10)
         {
-            timer -= Time.deltaTime;
+            Debug.Log("Player has won!");
+            Destroy(this.gameObject);
+        }
+        if(tv.gameOver)
+        {
+            Debug.Log("Player has lost!");
+            Destroy(this.gameObject);
+        }
+       if(playerScript.playerDied)
+        {
+            Destroy(this.gameObject);
         }
 
     }
